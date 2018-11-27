@@ -48,7 +48,7 @@ void loop() {                       // put your main code here, to run repeatedl
     sendCommand("AT+CIPMUX=1",5,"OK");                                      //enables multiple connections
     sendCommand("AT+CIPSTART=0,\"TCP\",\""+ HOST +"\","+ PORT,15,"OK");     //opens communication
     sendCommand("AT+CIPSEND=0," +String(getData.length()+4),4,">");         //how many characters are being sent
-    esp8266.println(getData);delay(1500);countTrueCommand++;                //printing what is being send
+    esp8266.println(getData);delay(1500);countTrueCommand++;                //printing what is being sent
     sendCommand("AT+CIPCLOSE=0",5,"OK");                                    // closes connection
   }
 
